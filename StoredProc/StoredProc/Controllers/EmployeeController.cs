@@ -289,8 +289,15 @@ namespace StoredProc.Controllers
                     model.Add(details);
                 }
                 return View(model);
+
+
             }
         }
-    }
-}
 
+
+
+      
+
+
+        }
+    }

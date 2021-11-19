@@ -1,0 +1,68 @@
+﻿@{
+}
+
+
+
+<body style="padding-top: 10px">
+    <div class="col-xs-8 col-xs-offset-2">
+        <div class="panel-heading">
+            <h3>Employee Search Form</h3>
+        </div>
+        <form asp-controller="Cars" asp-action="Index">
+            <div>
+                <label for="manufacturer">manufacturer</label>
+                <br />
+                <input type="text" name="manufacturer" placeholder="BMW ,Ford,Subaru" />
+            </div>
+            <br />
+            <div>
+                <label for="model">model</label>
+                <br />
+                <input type="text" name="model" placeholder="m3 ,ram or smth" />
+            </div>
+            <br />
+            <div>
+                <label for="VIN">VIN </label>
+                <br />
+                <input type="text" name="VIN" placeholder="Numbers and letter or smth" />
+            </div>
+            <br />
+
+            <div>
+                <label for="id">Id</label>
+                <br />
+                <input type="number" name="id" placeholder="1-100" />
+            </div>
+            <br />
+            <div>
+                <label for="model_year">Model Year</label>
+                <br />
+                <input type="number" name="model_year" placeholder="1900-2021" />
+            </div>
+            <br />
+            <input type="submit" value="DynamicSQL" />
+        </form>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">model_year</th>
+                    <th scope="col">model</th>
+                    <th scope="col">manufacturer</th>
+                    <th scope="col">VIN</th>
+                </tr>
+            <tbody>
+                @foreach (var Car in Model)
+                {
+                <tr>
+                    <td>@Car.id</td>
+                    <td>@Car.model_year</td>
+                    <td>@Car.model</td>
+                    <td>@Car.manufacturer</td>
+                    <td>@Car.VIN</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
